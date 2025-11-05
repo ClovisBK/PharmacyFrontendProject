@@ -40,7 +40,7 @@ const BookList = () => {
              <div className=" card-component" key={book.id}>
 
                 <div className="image">
-                  <img src={`/assets/${book.imageUrl}`} alt={book.title} />
+                  <img src={`/${book.imageUrl}`} alt={book.title} />
                 </div>
                 <div className="caption">{book.title}</div>
                 <div className="details">
