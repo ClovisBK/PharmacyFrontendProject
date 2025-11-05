@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../api';
 import './Styles/books.css';
 import './Styles/loan.css';
+import testImage from '../assets/download.jpg'
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -51,6 +52,9 @@ const BookList = () => {
             ))}
      </div>
       )}
+      <div>Adding another image in assets for testing.
+        <img src={testImage} alt="" />
+      </div>
     </div>
   );
 };
