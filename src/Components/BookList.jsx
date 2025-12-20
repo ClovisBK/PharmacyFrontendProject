@@ -47,7 +47,7 @@ const BookList = () => {
                   <div className="publish-year " >{book.publicationYear}</div>
                 </div>
              </div>
-            ))}
+            ))}   
      </div>
       )}
     </div>

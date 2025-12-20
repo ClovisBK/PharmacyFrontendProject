@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import api from '../api';
 import './Styles/loan.css';
-import { useNavigate } from 'react-router-dom';
+import './Styles/forms.css';
+import {Link, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const [formData, setFormData] = useState({email: '', password: ''});
@@ -48,38 +49,33 @@ const LoginForm = () => {
         }
     }
   return (
-    <div className='max-w-md mx-auto  p-6  rounded-lg shadow-md form-container'>
-        <h2 className='text-2xl font-bold mb-4 text-center text-blue-700'>Login</h2>
-        <form onSubmit={handleSubmit} className='space-y-4'>
-            <input
-                type= "email"
-                name='email'
-                placeholder='Email'
-                value={formData.email}
-                onChange={handleChange}
-                className='w-full px-4 py-2 border rounder focus:outline-none focus:ring-blue-500'
-                required
-            />
-            <input
-                type= "password"
-                name='password'
-                placeholder='Password'
-                value={formData.password}
-                onChange={handleChange}
-                className='w-full px-4 py-2 border rounder focus:outline-none focus:ring-blue-500'
-                required
-            />
-            <button type="submit" className='w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700 transition'>
-                Login
-            </button>
+      <div className='form-container'>
+        <h2>Login</h2>
+
+        <form onSubmit={handleSubmit}>
+            <input type="email" name="email" placeholder='Email' onChange={handleChange} />
+            <input type="password" name="password" placeholder='Password' onChange={handleChange} />
+            <button type='submit'>Login</button>
         </form>
-            {error && <p className='mt-4 text-center text-red-600'>{error}</p>}
-            {message && <p className='mt-4 text-center text-green-600'>{message}</p>}
-            {loading && 
-            <div className='spinner-container'>
-                    <div className="spinner"></div>
-            </div>
-            }
+        <div style={{color: "blue"}} className='login-links'>
+
+         <Link to="/forgot-password" style={{
+            marginLeft: "10px", 
+            color: "blue", 
+            marginTop: "-10px",
+            textDecoration: "none",
+            fontSize: "15px"
+            }}>Forgot Password?</Link>
+         <Link to="/register" className='sign-up-link' style={{
+            
+             color: "blue",
+             fontSize: "15px",
+             textDecoration: "none"
+             }}>Sign Up</Link>
+        </div>
+        
+        {message && <p style={{color: "blue"}}>{message}</p>}
+        {error && <p style={{color: "red"}}>{error}</p>}
         
     </div>
   )

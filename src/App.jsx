@@ -10,6 +10,7 @@ import Navbar from './Components/Navbar'
 import Home from './Pages/Home'
 import Topnav from './Pages/Topnav'
 import Reserve from './Pages/Reserve'
+import ForgotPassword from './Components/ForgotPassword'
 
 function App() {
 
@@ -22,8 +23,9 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path='/login'  element={<Login/>}/>
         <Route path='/books' element={<Books/>} />
-        <Route path='/loan' element={<Loan/>}/>
-        <Route path='/reserve' element={<Reserve/>}/>
+        <Route path='/forgot-password' element={<ForgotPassword/>} />
+        
+        
       </Routes>
     </Router>
    </>

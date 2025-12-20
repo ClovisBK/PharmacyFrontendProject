@@ -1,12 +1,17 @@
 .navbar{
-    background-color: #1e3a8a;
-    color: white;
+    background-color: #fafbfc;
     padding: 1rem 2rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 100px;
 }
 .navbar-brand{
     display: flex;
@@ -16,7 +21,7 @@
 .navbar-brand a {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: rgb(10, 99, 47);
     text-decoration: none;
 }
 .menu-toggle{
@@ -24,7 +29,7 @@
     font-size: 1.5rem;
     background: none;
     border: none;
-    color: white;
+    color: rgb(14, 3, 3);
     cursor: pointer;
 }
 .navbar-links{
@@ -35,7 +40,7 @@
     padding: 0;
 }
 .navbar-links a{
-    color: white;
+    color: rgb(3, 46, 21);
     text-decoration: none;
     font-size: 1rem;
 }

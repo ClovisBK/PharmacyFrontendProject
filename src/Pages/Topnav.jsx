@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar'
 
 const Topnav = () => {
   return (
-    <div>
+    <div className='mt-20'>
       <Navbar/>
     </div>
   )
