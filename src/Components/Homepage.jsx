@@ -3,16 +3,16 @@ import { motion } from 'framer-motion'
 
 const Homepage = () => {
   return (
-    <div className="homepage flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-800 px-6 text-center">
+    <div className="homepage flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-100 text-gray-800 px-6 text-center">
       
      
       <motion.h1
-        className="text-4xl md:text-6xl font-bold mb-4 text-blue-700"
+        className="text-4xl md:text-4xl font-bold mb-4 text-rgb(29, 221, 109)-700"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Welcome to Champions' Library
+        Welcome to pharmaClo. A hub of good health
       </motion.h1>
 
      
@@ -22,9 +22,8 @@ const Homepage = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        Dive into your <span className="text-blue-600 font-semibold">school of knowledge</span> — 
-        where curiosity sparks discovery. Explore, borrow, and enjoy books that 
-        expand your world and feed your imagination. Don't be left behind!
+        Find Pharmacies and make purchaces for your medication at <span className="text-blue-600 font-semibold">PharmaClo</span> — 
+        Get in touch with trusted and reputable pharmacies at the comfort of your home <i className='fa-solid fa-home'></i>
       </motion.p>
 
       
@@ -35,7 +34,7 @@ const Homepage = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
       >
-        Explore Our Collection
+        Explore Drug Shops
       </motion.a>
 
      
@@ -50,7 +49,7 @@ const Homepage = () => {
 
      
       <footer className="absolute bottom-1 text-gray-600 text-sm">
-        © {new Date().getFullYear()} Clovis Library. All rights reserved.
+        © {new Date().getFullYear()}PharmaClo Limited . All rights reserved.
       </footer>
     </div>
   )

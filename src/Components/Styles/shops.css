@@ -1,0 +1,78 @@
+.heading{
+    font-size: 1.7rem;
+    color: rgba(0,0,0,0.7);
+    text-align: center;
+    border-bottom: 1px solid rgba(128, 128, 128,0.3);
+    padding: 10px;
+    font-weight: 600;
+}
+
+.shop-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.shop-card-container{
+    box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.08);
+    border-radius: .5rem;
+}
+.upper-part{
+    padding: 20px 15px;
+    border-bottom: 1px solid rgb(128, 128, 128,0.3);
+}
+.upper-part div{
+    margin-top: 10px;
+}
+.upper-part .pharmacy-name{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgba(0,0,0,0.8);
+}
+.upper-part .location{
+    color: grey;
+}
+.upper-part div i{
+    margin-right: 10px;
+}
+.middle-part{
+    padding: 10px 15px;
+}
+.middle-part div{
+    margin-top: 10px;
+}
+.middle-part div i{
+    margin-right: 10px;
+    color: rgba(3, 71, 45,0.8)
+}
+.lower-part div{
+    padding: 10px;
+}
+.lower-part div button{
+    border-radius: .5rem;
+    padding: 10px 15px;
+    font-weight: 500;
+}
+.lower-part div .shop-btn{
+    background-color: var(--green-background);
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.lower-part div button i{
+    margin-right: 5px;
+}
+.lower-part div .call-btn{
+    border: 2px solid var(--green-background);
+    background-color: white;
+    padding: 8px 25px;
+    color: var(--green-background);
+}
+/* 
+@media (max-width: 500px){
+    .shop-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+} */

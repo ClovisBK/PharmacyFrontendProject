@@ -11,6 +11,7 @@ const handleSubmit = async (event) => {
     event.preventDefault();
     setMessage("");
     setError("");
+    setLoading(true);
 
 
     try{

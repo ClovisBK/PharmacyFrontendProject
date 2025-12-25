@@ -11,7 +11,7 @@ const BookList = () => {
   useEffect(() => {
     async function loadBooks() {
       try {
-        const res = await api.get('/books');
+        const res = await api.get('/Drugs/see-drugs');
         setBooks(res.data);
       } catch (error) {
         console.error('Error loading books:', error);
@@ -25,7 +25,7 @@ const BookList = () => {
 
   return (
     <div className="">
-      <h2 className="text-3xl font-bold mb-6 text-center text-blue-700">Library Books</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center text-green-700">Drug Catalog</h2>
       {error && <p className="text-red-600 text-center mb-4">{error}</p>}
       {loading ? 
       (
@@ -40,11 +40,11 @@ const BookList = () => {
              <div className=" card-component" key={book.id}>
 
                 <div className="image">
-                  <img src={`${book.imageUrl}`} alt={book.title} />
+                  <img src={`${book.imageUrl}`} alt={book.genericName} />
                 </div>
-                <div className="caption">{book.title}</div>
+                <div className="caption">{book.genericName}</div>
                 <div className="details">
-                  <div className="publish-year " >{book.publicationYear}</div>
+                  <div className="publish-year " >{book.strength} FCFA {book.unitPrice}</div>
                 </div>
              </div>
             ))}   
