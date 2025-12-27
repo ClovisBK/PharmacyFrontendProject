@@ -9,6 +9,7 @@ import './App.css'
 import ForgotPassword from './Components/ForgotPassword'
 import ResetPassword from './Components/ResetPassword'
 import Shops from './Components/Shops'
+import PharmacyDrugs from './Components/PharmacyDrugs'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login'  element={<Login/>}/>
         <Route path='/books' element={<Books/>} />
         <Route path='/shops' element={<Shops/>} />
+        <Route path='/pharmacy/:pharmacyId/drugs' element={<PharmacyDrugs/>} />
         <Route path='/forgot-password' element={<ForgotPassword/>} />
         <Route path='/reset-password' element={<ResetPassword/>} />
       </Routes>

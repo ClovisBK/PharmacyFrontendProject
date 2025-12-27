@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './Styles/shops.css'
 import api from '../api'
+import { useNavigate } from 'react-router-dom';
 
 const Shops = () => {
     const [pharmacies, setPharmacies] = useState([]);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function loadPharmacies(){
@@ -21,10 +23,14 @@ const Shops = () => {
         }
         loadPharmacies();
     }, [])
+
+    const handleShopping = (pharmacyId) => {
+        navigate(`/pharmacy/${pharmacyId}/drugs`);
+    }
   return (
     <div className='shops-container'>
         <div className='heading'><h1>Choose a pharmacy you want to shop in at your convenience</h1></div>
-        {error && <p className='ta-center text-red-100'>{error}</p>}
+        {error && <p className='ta-center text-red-700'>{error}</p>}
         {loading ?
          (
             <div>Loading pharmacies...</div>
@@ -46,7 +52,10 @@ const Shops = () => {
                         </div>
                         <div className="lower-part">
                             <div>
-                                <button className='shop-btn'><i className='fa fa-store'></i>Shop Here</button>
+                                <button 
+                                className='shop-btn'
+                                onClick={() => handleShopping(pharmacy.id)}
+                                ><i className='fa fa-store'></i>Shop Here</button>
                                 <button className='call-btn'>Call Now</button>
                             </div>
                         </div>
