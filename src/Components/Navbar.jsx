@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Styles/navbar.css'
+import CartButton from './CartButton';
 
 const Navbar = () => {
  const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +24,10 @@ const Navbar = () => {
             <li><Link to="/shops" onClick={handleLinkClick}>Shops</Link></li>
             <li><Link to="/login" onClick={handleLinkClick}>Login</Link></li>
         </ul>
+
+        <div>
+            <CartButton/>
+        </div>
     </nav>
   )
 }

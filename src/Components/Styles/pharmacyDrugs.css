@@ -17,6 +17,17 @@
 .back-btn i{
     font-size: .7rem;
 }
+
+.cart-status{
+    background: '#3498db';
+     color: 'white';
+    padding: '8px 15px';
+    border-radius: '20px';
+    display: 'inline-flex';
+    align-items: 'center';
+    gap: '8px',;
+    margin-top: '10px';
+}
 .search-field{
     margin-left: 15px;
     width: 600px;

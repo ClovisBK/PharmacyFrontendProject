@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import api from '../api'
 import { useNavigate, useParams } from 'react-router-dom';
 import './Styles/pharmacyDrugs.css'
-import { button } from 'framer-motion/client';
+import { useCart } from './CartContext';
 const PharmacyDrugs = () => {
 const [pharmacyDrugs, setPharmacyDrugs] = useState([]);
 const [pharmacy, setPharmacy] = useState(null);
@@ -11,6 +11,8 @@ const {pharmacyId} = useParams();
 const [loading, setLoading] = useState(true);
 const [searchTerm, setSearchTerm] = useState('');
 const navigate = useNavigate();
+
+const {cart, addToCart, getItemCount} = useCart();
 
     useEffect(() => {
         async function LoadPharmacyDrugs(){
@@ -51,6 +53,14 @@ const navigate = useNavigate();
     const clearSearch = () => {
         setSearchTerm('');
     }
+    
+    const handleAddToCart = (drug) => {
+        if(!pharmacy)
+            return
+        addToCart(drug, pharmacyId, pharmacy.name)
+        console.log(`Added ${drug.genericName} to Cart`);
+    }
+
     if(loading){
         return(
             <h1>Loading drugs....</h1>
@@ -77,6 +87,13 @@ const navigate = useNavigate();
             <i className='fa fa-arrow-left'></i>Shops
         </button>
         <div className='welcome'>Welcome to {pharmacy.name}</div>
+
+        {cart.pharmacyId && cart.pharmacyId === pharmacyId && (
+            <div className='cart-status'>
+                <i className='fa fa-shopping-cart'></i>
+                {getItemCount} items in cart
+            </div>
+        )}
         </div>
         <div className='search-field'>
 
@@ -107,19 +124,22 @@ const navigate = useNavigate();
         ): (
 
             <div className="drug-container">
-            {(searchTerm ? filterDrugs : pharmacyDrugs).map(drugs => (
-                <div className="drug-card-container" key={drugs.id}>
+            {(searchTerm ? filterDrugs : pharmacyDrugs).map(drug => (
+                <div className="drug-card-container" key={drug.id}>
+                    {console.log("Image url", drug.imageUrl)}
                     <div className="image-section">
-                        <img src='\amoxicillin.jpg' alt="" />
+                        <img src={`/${drug.imageUrl}`} alt={drug.genericName} />
                     </div>
                     <div className="description">
-                        <div className="drug-name">{drugs.genericName} {drugs.dosageForm}</div>
-                        <div className="strength"><span>{drugs.strength}</span></div>
+                        <div className="drug-name">{drug.genericName} {drug.dosageForm}</div>
+                        <div className="strength"><span>{drug.strength}</span></div>
                     </div>
-                    <div className="generic-name">{drugs.brandName}</div>
-                    <div className="price">{drugs.unitPrice} FCFA</div>
+                    <div className="generic-name">{drug.brandName}</div>
+                    <div className="price">{drug.unitPrice} FCFA</div>
                     <div className="add-to-cart">
-                        <button><i className='fa fa-cart'></i>Add to Cart</button>
+                        <button
+                        onClick={() => handleAddToCart(drug)}
+                        ><i className='fa fa-cart'></i>Add to Cart</button>
                     </div>
                 </div>
             ))}
