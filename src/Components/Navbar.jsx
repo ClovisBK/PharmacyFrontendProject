@@ -28,7 +28,7 @@ const Navbar = () => {
             <li><Link to="/drugs" onClick={handleLinkClick}>View drugs</Link></li>
             <li><Link to="/shops" onClick={handleLinkClick}>Shops</Link></li>
             <li><Link to="/login" onClick={handleLinkClick}>Login</Link></li>
-            <li><Link onClick={handleLinkClick}><button onClick={handleLogout}>Logout</button></Link></li>
+            {/* <li><button onClick={handleLogout}>Logout</button></li> */}
         </ul>
 
         <div>
