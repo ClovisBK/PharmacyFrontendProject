@@ -127,7 +127,7 @@
 
 .place-order-btn {
     width: 100%;
-    background: #27ae60;
+    background: var(--green-background);
     color: white;
     border: none;
     padding: 15px;

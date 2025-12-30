@@ -29,14 +29,15 @@
     margin-top: '10px';
 }
 .search-field{
-    margin-left: 15px;
-    width: 600px;
+    max-width: 450px;
+    margin-left: 10px;
+    margin-right: 10px;
 
 }
 .search-field input{
     border: 1px solid grey;
     padding: 10px 15px;
-    width: 500px;
+    width: 100%;
     border-radius: .5rem;
     font-size: 1.2rem;
 }
@@ -122,4 +123,36 @@
     color: white;
     font-weight: 650;
 
+}
+
+@media (max-width: 500px){
+    .drug-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 6px;
+        padding: 9px;
+    }
+    .drug-card-container .image-section{
+    width: 100%;
+    height: 125px;
+}
+.description .drug-name{
+    font-size: 0.9rem;
+    margin-top: -4px;
+}
+.description{
+    display: grid;
+}
+.description span{
+    padding: 2px 6px;
+    font-size: .7rem;
+}
+.price{
+    font-size: 1.1rem;
+    margin-top: 2px;
+}
+.add-to-cart button{
+    width: 100%;
+    margin-top: 5px;
+}
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../api';
 import './Styles/books.css';
 import './Styles/loan.css';
+import './Styles/pharmacyDrugs.css'
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -47,9 +48,117 @@ const BookList = () => {
                   <div className="publish-year " >{book.strength} FCFA {book.unitPrice}</div>
                 </div>
              </div>
-            ))}   
+            ))} 
+
+             <div className=" card-component">
+
+                <div className="image">
+                  <img src='\amoxicillin.jpg' alt='' />
+                </div>
+                <div className="caption">Some text</div>
+                <div className="details">
+                  <div className="publish-year " >some years</div>
+                </div>
+             </div>  
+             <div className=" card-component">
+
+                <div className="image">
+                  <img src='\amoxicillin.jpg' alt='' />
+                </div>
+                <div className="caption">Some text</div>
+                <div className="details">
+                  <div className="publish-year " >some years</div>
+                </div>
+             </div>  
+             <div className=" card-component">
+
+                <div className="image">
+                  <img src='\amoxicillin.jpg' alt='' />
+                </div>
+                <div className="caption">Some text</div>
+                <div className="details">
+                  <div className="publish-year " >some years</div>
+                </div>
+             </div>  
+             <div className=" card-component">
+
+                <div className="image">
+                  <img src='\amoxicillin.jpg' alt='' />
+                </div>
+                <div className="caption">Some text</div>
+                <div className="details">
+                  <div className="publish-year " >some years</div>
+                </div>
+             </div> 
      </div>
       )}
+        <div className="drug-container">
+            
+                  <div className="drug-card-container">
+                      
+                      <div className="image-section">
+                          <img src='\metronidazole.jpg' alt=''/>
+                      </div>
+                      <div className="description">
+                          <div className="drug-name">paracetamol Tablet</div>
+                          <div className="strength"><span>300mg/300cm</span></div>
+                      </div>
+                      <div className="generic-name">sdffd</div>
+                      <div className="price">2333 FCFA</div>
+                      <div className="add-to-cart">
+                          <button
+                          ><i className='fa fa-cart'></i>Add to Cart</button>
+                      </div>
+                  </div>
+                  <div className="drug-card-container">
+                      
+                      <div className="image-section">
+                          <img src='\metronidazole.jpg' alt=''/>
+                      </div>
+                      <div className="description">
+                          <div className="drug-name">paracetamol Tablet</div>
+                          <div className="strength"><span>300mg/300cm</span></div>
+                      </div>
+                      <div className="generic-name">sdffd</div>
+                      <div className="price">2333 FCFA</div>
+                      <div className="add-to-cart">
+                          <button
+                          ><i className='fa fa-cart'></i>Add to Cart</button>
+                      </div>
+                  </div>
+                  <div className="drug-card-container">
+                      
+                      <div className="image-section">
+                          <img src='\metronidazole.jpg' alt=''/>
+                      </div>
+                      <div className="description">
+                          <div className="drug-name">paracetamol Tablet</div>
+                          <div className="strength"><span>300mg/300cm</span></div>
+                      </div>
+                      <div className="generic-name">sdffd</div>
+                      <div className="price">2333 FCFA</div>
+                      <div className="add-to-cart">
+                          <button
+                          ><i className='fa fa-cart'></i>Add to Cart</button>
+                      </div>
+                  </div>
+                  <div className="drug-card-container">
+                      
+                      <div className="image-section">
+                          <img src='\metronidazole.jpg' alt=''/>
+                      </div>
+                      <div className="description">
+                          <div className="drug-name">paracetamol Tablet</div>
+                          <div className="strength"><span>300mg/300cm</span></div>
+                      </div>
+                      <div className="generic-name">sdffd</div>
+                      <div className="price">2333 FCFA</div>
+                      <div className="add-to-cart">
+                          <button
+                          ><i className='fa fa-cart'></i>Add to Cart</button>
+                      </div>
+                  </div>
+              </div>
     </div>
   );
 };
