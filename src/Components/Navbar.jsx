@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Styles/navbar.css'
 import CartButton from './CartButton';
 
 const Navbar = () => {
  const [menuOpen, setMenuOpen] = useState(false);
+ const navigate = useNavigate();
 
  const handleLinkClick = () => {
     setMenuOpen(false);
+ }
+ const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    navigate('/login');
  }
   return (
     <nav className='navbar'>
@@ -20,9 +25,10 @@ const Navbar = () => {
         
         <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
             <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
-            <li><Link to="/books" onClick={handleLinkClick}>View drugs</Link></li>
+            <li><Link to="/drugs" onClick={handleLinkClick}>View drugs</Link></li>
             <li><Link to="/shops" onClick={handleLinkClick}>Shops</Link></li>
             <li><Link to="/login" onClick={handleLinkClick}>Login</Link></li>
+            <li><Link onClick={handleLinkClick}><button onClick={handleLogout}>Logout</button></Link></li>
         </ul>
 
         <div>

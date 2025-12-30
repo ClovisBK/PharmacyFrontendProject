@@ -30,7 +30,7 @@ const LoginForm = () => {
                 localStorage.setItem('authToken', token);
                 setMessage('Login successful!');
                
-                navigate('/books');
+                navigate('/shops');
             }else{
                 setError("Login Succeeded but no token was returned.");
             }

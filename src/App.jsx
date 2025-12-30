@@ -12,6 +12,7 @@ import Shops from './Components/Shops'
 import PharmacyDrugs from './Components/PharmacyDrugs'
 import { CartProvider } from './Components/CartContext'
 import Checkout from './Components/Checkout'
+import ProtectedRoute from './Components/ProtectedRoute'
 
 function App() {
 
@@ -24,8 +25,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path='/login'  element={<Login/>}/>
-          <Route path='/books' element={<Books/>} />
-          <Route path='/shops' element={<Shops/>} />
+          <Route path='/drugs' element={<Books/>} />
+          <Route path='/shops' element={<ProtectedRoute><Shops/></ProtectedRoute>} />
           <Route path='/pharmacy/:pharmacyId/drugs' element={<PharmacyDrugs/>} />
           <Route path='/forgot-password' element={<ForgotPassword/>} />
           <Route path='/reset-password' element={<ResetPassword/>} />

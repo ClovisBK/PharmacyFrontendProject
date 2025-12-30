@@ -49,47 +49,6 @@ const BookList = () => {
                 </div>
              </div>
             ))} 
-
-             <div className=" card-component">
-
-                <div className="image">
-                  <img src='\amoxicillin.jpg' alt='' />
-                </div>
-                <div className="caption">Some text</div>
-                <div className="details">
-                  <div className="publish-year " >some years</div>
-                </div>
-             </div>  
-             <div className=" card-component">
-
-                <div className="image">
-                  <img src='\amoxicillin.jpg' alt='' />
-                </div>
-                <div className="caption">Some text</div>
-                <div className="details">
-                  <div className="publish-year " >some years</div>
-                </div>
-             </div>  
-             <div className=" card-component">
-
-                <div className="image">
-                  <img src='\amoxicillin.jpg' alt='' />
-                </div>
-                <div className="caption">Some text</div>
-                <div className="details">
-                  <div className="publish-year " >some years</div>
-                </div>
-             </div>  
-             <div className=" card-component">
-
-                <div className="image">
-                  <img src='\amoxicillin.jpg' alt='' />
-                </div>
-                <div className="caption">Some text</div>
-                <div className="details">
-                  <div className="publish-year " >some years</div>
-                </div>
-             </div> 
      </div>
       )}
     </div>
