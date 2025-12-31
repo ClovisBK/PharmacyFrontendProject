@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-
 import './Styles/homepage.css'
 
 const Homepage = () => {
@@ -16,7 +15,7 @@ const Homepage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Welcome to pharmaClo. A hub of good health
+          Welcome to pharmaClo. A hub of guaranteed well-being
         </motion.h1>
 
       
