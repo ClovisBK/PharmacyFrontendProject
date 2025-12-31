@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './Styles/homepage.css'
+import ProtectedRoute from './ProtectedRoute'
 
 const Homepage = () => {
   return (
@@ -29,18 +30,18 @@ const Homepage = () => {
           Find Pharmacies and make purchaces for your medication at <span className="text-blue-600 font-semibold">PharmaClo</span> — 
           Get in touch with trusted and reputable pharmacies at the comfort of your home <i className='fa-solid fa-home'></i>
         </motion.p>
-
-        
-          <Link to='/shops'>
-            <motion.div
-              className="explore-btn"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-            >
-              Explore Drug Shops
-            </motion.div>
-          </Link>
+          <ProtectedRoute>
+              <Link to='/shops'>
+                <motion.div
+                  className="explore-btn"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1.2, duration: 0.6 }}
+                >
+                  Explore Drug Shops
+                </motion.div>
+              </Link>
+          </ProtectedRoute>
         
 
       </div>
