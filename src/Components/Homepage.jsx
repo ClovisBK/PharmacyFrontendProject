@@ -9,6 +9,7 @@ const Homepage = () => {
 
       <div className='home-upper-section'>
 
+
         <motion.h1
           className="homepage-heading"
           initial={{ opacity: 0, y: -30 }}
