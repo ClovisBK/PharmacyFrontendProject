@@ -84,7 +84,7 @@ const Checkout = () => {
             <h1 className="checkout-title">Checkout</h1>
             
             <div className="checkout-content">
-                {/* Order Summary */}
+                
                 <div className="order-summary">
                     <h2>Order Summary</h2>
                     <div className="pharmacy-info">
