@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Styles/shops.css'
 import api from '../api'
 import { useNavigate } from 'react-router-dom';
+import { div } from 'framer-motion/client';
 
 const Shops = () => {
     const [pharmacies, setPharmacies] = useState([]);
@@ -33,7 +34,10 @@ const Shops = () => {
         {error && <p className='ta-center text-red-700'>{error}</p>}
         {loading ?
          (
-            <div>Loading pharmacies...</div>
+            <div>
+                <div style={{textAlign: "center", color: "black"}}><i className='fa fa-spinner fa-spin'></i></div>
+                <div style={{textAlign: "center"}}>Loading Pharmacies...</div>
+            </div>
          ): (
 
             <div className="shop-container">

@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://pharmaclo-bzf8a5d2fmbqhjgk.canadacentral-01.azurewebsites.net/api',
-    // baseURL: 'https://localhost:7070/api',
+    // baseURL: 'https://pharmaclo-bzf8a5d2fmbqhjgk.canadacentral-01.azurewebsites.net/api',
+    baseURL: 'https://localhost:7070/api',
     headers: {'Content-Type': 'application/json'},
    
 });

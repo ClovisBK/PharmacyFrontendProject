@@ -50,12 +50,12 @@ const LoginForm = () => {
     }
   return (
       <div className='form-container'>
-        <h2>Login</h2>
+       <h2>Login</h2>
 
         <form onSubmit={handleSubmit}>
             <input type="email" name="email" placeholder='Email' onChange={handleChange} />
             <input type="password" name="password" placeholder='Password' onChange={handleChange} />
-            <button type='submit'>Login</button>
+            <button type='submit'>{loading ? <i className='fa fa-spinner fa-spin'></i> : 'Login'}</button>
         </form>
         <div style={{color: "blue"}} className='login-links'>
 

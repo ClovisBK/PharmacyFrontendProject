@@ -4,6 +4,7 @@ import {Link, useNavigate } from 'react-router-dom';
 
 import './Styles/forms.css'
 
+
 const RegisterMember = () => {
 const [formData, setFormData] = useState({
 
@@ -117,7 +118,7 @@ const handleSubmit = async e => {
             value={formData.phone} onChange={handleChange} />
             {error.phone &&  <span id='phoneError'>{error.phone}</span>}
 
-            <button type='submit'>Register</button>
+            <button type='submit'>{loading ? <i className='fa fa-spinner fa-spin'></i> : 'Register'}</button>
         </form>
         <div>Already have an account? <Link to="/login">Log in</Link></div>
         {message && <p style={{color: "green"}}>{message}</p>}
