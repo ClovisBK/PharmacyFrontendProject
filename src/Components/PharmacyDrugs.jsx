@@ -126,7 +126,6 @@ const {cart, addToCart, getItemCount} = useCart();
             <div className="drug-container">
             {(searchTerm ? filterDrugs : pharmacyDrugs).map(drug => (
                 <div className="drug-card-container" key={drug.id}>
-                    {console.log("Image url", drug.imageUrl)}
                     <div className="image-section">
                         <img src={`/${drug.imageUrl}`} alt={drug.genericName} />
                     </div>

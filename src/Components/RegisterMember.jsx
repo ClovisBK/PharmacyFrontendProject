@@ -59,7 +59,7 @@ const handleSubmit = async e => {
             password: '',
             confirmPassword: ''
         });
-        navigate('/books');
+        navigate('/login');
     }catch(err){
         if(err.response?.data?.errors){
                 const messages = Object.values(err.response.data.errors).flat().join(' ');
