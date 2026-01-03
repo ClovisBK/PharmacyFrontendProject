@@ -87,7 +87,7 @@ const handleSubmit = async (e) => {
 
         </form>
         {message && <p style={{color: "green"}}>{message}</p>}
-        {error && <p className='color-red'>{error}</p>}
+        {error && <p style={{color: "red"}}>{error}</p>}
     </div>
   )
 }

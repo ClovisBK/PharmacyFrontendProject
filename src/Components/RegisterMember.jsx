@@ -59,7 +59,7 @@ const handleSubmit = async e => {
             password: '',
             confirmPassword: ''
         });
-        navigate('/login');
+        navigate("/login");
     }catch(err){
         if(err.response?.data?.errors){
                 const messages = Object.values(err.response.data.errors).flat().join(' ');
@@ -67,7 +67,7 @@ const handleSubmit = async e => {
             }else if(err.response?.data?.message)
                 setError(`${err.response.data.message}`);
             else
-                setError('Login failed. Please check your credentials');
+                setError('Registration failed');
         
         console.error(error);
     }finally{
@@ -101,7 +101,7 @@ const handleSubmit = async e => {
              placeholder='Password' 
              value={formData.password} 
              onChange={handleChange} />
-            {error.password &&  <span id='passwordError'>{errors.password}</span>}
+            {error.password &&  <span id='passwordError'>{error.password}</span>}
 
             <input 
              type="password" 
