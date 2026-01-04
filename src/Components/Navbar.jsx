@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
         <div className='navbar-brand'>
-            <Link to={'/'}>LiBook</Link>
+            <Link to={'/'}>PharmaClo</Link>
         </div>
             <button className='menu-toggle' onClick={() => setMenuOpen(!menuOpen)}>
                 {'\u2630'}
