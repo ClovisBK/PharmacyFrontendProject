@@ -94,6 +94,7 @@ const Checkout = () => {
                     <div className="items-list">
                         {cart.items.map(item => (
                             <div key={item.drugId} className="order-item">
+                                <div className='item-image'><img src={`${item.imageUrl}`} alt={item.drugName} /></div>
                                 <div className="item-name">{item.drugName}</div>
                                 <div className="item-details">
                                     <span>Qty: {item.quantity}</span>
