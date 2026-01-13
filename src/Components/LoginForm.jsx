@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import api from '../api';
 import './Styles/loan.css';
 import './Styles/forms.css';
 import {Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
 
 const LoginForm = () => {
+    const { login } = useContext(AuthContext);
     const [formData, setFormData] = useState({email: '', password: ''});
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
@@ -25,9 +27,9 @@ const LoginForm = () => {
             console.log("Full reponse:", response);
             const token = response.data.accessToken;
 
-            console.log('token generated', token);
+            
             if(token){
-                localStorage.setItem('authToken', token);
+                login(token);
                 setMessage('Login successful!');
                
                 navigate('/shops');

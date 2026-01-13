@@ -13,27 +13,30 @@ import PharmacyDrugs from './Components/PharmacyDrugs'
 import { CartProvider } from './Components/CartContext'
 import Checkout from './Components/Checkout'
 import ProtectedRoute from './Components/ProtectedRoute'
+import { AuthProvider } from './Context/AuthContext'
 
 function App() {
 
   return (
   <>
-  <CartProvider>
-      <Router>
-          <Topnav/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path='/login'  element={<Login/>}/>
-          <Route path='/drugs' element={<Books/>} />
-          <Route path='/shops' element={<ProtectedRoute><Shops/></ProtectedRoute>} />
-          <Route path='/pharmacy/:pharmacyId/drugs' element={<PharmacyDrugs/>} />
-          <Route path='/forgot-password' element={<ForgotPassword/>} />
-          <Route path='/reset-password' element={<ResetPassword/>} />
-          <Route path='/checkout' element={<Checkout/>} />
-        </Routes>
-      </Router>
-  </CartProvider>
+  <AuthProvider>
+    <CartProvider>
+        <Router>
+            <Topnav/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path="/register" element={<Register/>}/>
+            <Route path='/login'  element={<Login/>}/>
+            <Route path='/drugs' element={<Books/>} />
+            <Route path='/shops' element={<ProtectedRoute><Shops/></ProtectedRoute>} />
+            <Route path='/pharmacy/:pharmacyId/drugs' element={<PharmacyDrugs/>} />
+            <Route path='/forgot-password' element={<ForgotPassword/>} />
+            <Route path='/reset-password' element={<ResetPassword/>} />
+            <Route path='/checkout' element={<Checkout/>} />
+          </Routes>
+        </Router>
+    </CartProvider>
+  </AuthProvider>
    </>
   
   )
