@@ -27,6 +27,7 @@ const Navbar = () => {
         
         <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
             <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
+            <li><Link to="/dashboard" onClick={handleLinkClick}>Dashboard</Link></li>
             <li><Link to="/drugs" onClick={handleLinkClick}>View drugs</Link></li>
             <li><Link to="/shops" onClick={handleLinkClick}>Pharmacies</Link></li>
             {isLoggedIn ? 

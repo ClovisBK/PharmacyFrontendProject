@@ -14,6 +14,7 @@ import { CartProvider } from './Components/CartContext'
 import Checkout from './Components/Checkout'
 import ProtectedRoute from './Components/ProtectedRoute'
 import { AuthProvider } from './Context/AuthContext'
+import Dashboard from './Components/Dashboard'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
             <Route path='/forgot-password' element={<ForgotPassword/>} />
             <Route path='/reset-password' element={<ResetPassword/>} />
             <Route path='/checkout' element={<Checkout/>} />
+            <Route path='/dashboard' element={<Dashboard/>} />
           </Routes>
         </Router>
     </CartProvider>
