@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Styles/dashboard.css'
+import { format } from 'date-fns'
 import api from '../api'
 const Dashboard = () => {
   const [orders, setOrders] = useState([]);
@@ -34,8 +35,11 @@ const Dashboard = () => {
         {orders.map(order => (
           <div key={order.id} className='order-card'>
             <div className='right'>
-              <div className='order-text'>{order.deliveryAddress}</div>
-              <div>{order.orderDate}</div>
+              <div className='order-text'>{order.pharmacyName}</div>
+              <div className="date-status">
+                  <div className='date'>{format(new Date(order.orderDate), "MMM, dd yyyy")}</div>
+                  <div className='status'>{order.status}</div>
+              </div>
             </div>
             <div className='total-price'>{order.totalPrice} FCFA</div>
           </div>
