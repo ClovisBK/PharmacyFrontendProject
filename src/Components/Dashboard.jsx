@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import './Styles/dashboard.css'
 import { format } from 'date-fns'
 import api from '../api'
-import { style } from 'framer-motion/client'
 const Dashboard = () => {
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState('');
+  const [authenticatedUser, setAuthenticatedUser] = useState(null);
 
   useEffect(()  => {
     async function LoadUserOrders(){
@@ -17,6 +17,17 @@ const Dashboard = () => {
       }
       
     }
+
+    async function LoadAuthenticatedUserInfo(){
+      try{
+
+        const response = await api.get('/Auth/authenticated-user');
+        setAuthenticatedUser(response.data);
+      }catch(err){
+        console.error("Error loading user data", err);
+      }
+    }
+    LoadAuthenticatedUserInfo();
     LoadUserOrders();
   }, [])
     //creating the colors for the status
@@ -44,7 +55,7 @@ const Dashboard = () => {
   return (
     <div className='dashboard-container'>
        <div className="dashboard-heading">
-        <h1>Welcome Back, Clovis!</h1>
+        <h1>Welcome Back, {authenticatedUser ? authenticatedUser.fullName : 'Dear customer'}</h1>
         <p>Your pharmacy orders and health information in one place</p>
        </div>
        <div className="informatics">
