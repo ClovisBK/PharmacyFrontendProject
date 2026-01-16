@@ -32,7 +32,7 @@ const Dashboard = () => {
           text: '#27ae60'
 
         },
-        deleted: {
+        cancelled: {
           bg: 'rgba(245, 5, 5, 0.14)',
           text: '#e74c3c'
           
