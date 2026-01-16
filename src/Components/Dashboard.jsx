@@ -31,6 +31,7 @@ const Dashboard = () => {
         <div><span>34</span> <br /> Pharmacies Used</div>
         <div><span>98%</span> <br /> Success Rate</div>
        </div>
+       <h1 className='order-section'>Order History</h1>
        <div className="order-history">
         {orders.map(order => (
           <div key={order.id} className='order-card'>
